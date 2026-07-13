@@ -829,6 +829,32 @@ function showProject(n) {
   document.getElementById('proj-'+n).style.display='block';
   document.querySelectorAll('.proj-btn')[n-1].classList.add('active');
 }
+
+@media print {
+
+    /* Hiện toàn bộ các tuần */
+    .tab-panel{
+        display:block !important;
+        opacity:1 !important;
+        visibility:visible !important;
+        transform:none !important;
+        height:auto !important;
+    }
+
+    /* Ẩn thanh chọn tuần */
+    .tabs-nav{
+        display:none !important;
+    }
+
+    /* Mỗi tuần sang trang mới */
+    .tab-panel{
+        page-break-before:always;
+    }
+
+    .tab-panel:first-child{
+        page-break-before:auto;
+    }
+}
 </script>
 </body>
 </html>
