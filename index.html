@@ -137,6 +137,29 @@ footer span { color:var(--sakura); }
   .doc-content { padding:1.5rem; }
   .conclusion-banner { padding:2rem; }
 }
+
+@media print {
+
+  /* Ẩn nút chọn bài */
+  .projects-nav{
+    display:none !important;
+  }
+
+  /* Hiện tất cả các bài */
+  .project-panel{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    height:auto !important;
+    overflow:visible !important;
+    page-break-before:always;
+  }
+
+  .project-panel:first-of-type{
+    page-break-before:auto;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -830,31 +853,6 @@ function showProject(n) {
   document.querySelectorAll('.proj-btn')[n-1].classList.add('active');
 }
 
-@media print {
-
-    /* Hiện toàn bộ các tuần */
-    .tab-panel{
-        display:block !important;
-        opacity:1 !important;
-        visibility:visible !important;
-        transform:none !important;
-        height:auto !important;
-    }
-
-    /* Ẩn thanh chọn tuần */
-    .tabs-nav{
-        display:none !important;
-    }
-
-    /* Mỗi tuần sang trang mới */
-    .tab-panel{
-        page-break-before:always;
-    }
-
-    .tab-panel:first-child{
-        page-break-before:auto;
-    }
-}
 </script>
 </body>
 </html>
